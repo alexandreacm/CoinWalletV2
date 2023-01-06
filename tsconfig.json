@@ -18,7 +18,7 @@
     "target": "esnext",
     "baseUrl": "./",
     "paths": {
-      "@screens/*": ["./src/screens/*"],
+      "@screens/*": ["src/pages/*"],
       "@components/*": ["./src/components/*"],
       "@assets/*": ["./src/assets/*"],
       "@hooks/*": ["./src/hooks/*"],

@@ -16,19 +16,8 @@
     "test-collect": "jest --collectCoverage",
     "commit": "npx git-cz"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "jest --passWithNoTests"
-    }
-  },
-  "lint-staged": {
-    "./src/*.{ts,tsx,}": [
-      "eslint --fix",
-      "prettier --write"
-    ]
-  },
   "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.17.11",
     "@react-navigation/bottom-tabs": "^6.5.2",
     "@react-navigation/material-top-tabs": "^6.5.1",
     "@react-navigation/native": "^6.1.1",
