@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-
+import { Text } from 'react-native';
 import { useTheme } from 'styled-components/native';
 import { useRoute } from '@react-navigation/native';
-import { FINDING_COIN } from '@store/slices/CoinSlice';
 
 import { VictoryLine, VictoryChart, VictoryTheme } from 'victory-native';
 
@@ -11,20 +9,19 @@ import { Container } from './styles';
 
 export function Wallet() {
   const { COLORS } = useTheme();
-  const dispatch = useDispatch();
-  const { coinData } = useSelector(({ coins }) => coins);
 
   const {
     params: { id },
   } = useRoute();
 
   useEffect(() => {
-    dispatch(FINDING_COIN({ id }));
+    // dispatch(FINDING_COIN({ id }));
   }, []);
 
   return (
     <Container>
-      <VictoryChart theme={VictoryTheme.material} width={400}>
+      <Text>Graphic</Text>
+      {/* <VictoryChart theme={VictoryTheme.material} width={400}>
         <VictoryLine
           interpolation="basis"
           style={{
@@ -40,7 +37,7 @@ export function Wallet() {
             easing: 'elastic',
           }}
         />
-      </VictoryChart>
+      </VictoryChart> */}
     </Container>
   );
 }

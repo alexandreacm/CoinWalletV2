@@ -5,6 +5,7 @@ export declare global {
       SignIn: undefined;
       Home: undefined;
       HomeLogged: undefined;
+      HomeTab: undefined;
       Wallet: undefined;
       DetailCoin: undefined;
       Transfer: undefined;

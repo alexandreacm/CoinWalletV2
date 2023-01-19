@@ -4,15 +4,14 @@ import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components/native';
 
 import Routes from './src/routes';
-
 import theme from './src/theme';
 
-import { store } from './src/store';
+import { store } from '@store';
 import AuthProvider from '@contexts/AuthProvider';
-import { useFontResource } from '@hooks/useFontResurce';
+import { useFontResource } from '@hooks/useFontResource';
 
 export default function App() {
-  const { isLoading } = useFontResource();
+  const isLoading = useFontResource();
 
   if (isLoading) {
     return (
@@ -25,7 +24,6 @@ export default function App() {
           </NavigationContainer>
         </ThemeProvider>
       </Provider>
-    );
+    )
   }
-
 }

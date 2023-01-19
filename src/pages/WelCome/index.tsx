@@ -13,7 +13,7 @@ export default function WelCome() {
   function onHandleNavigate() {
     navigate('SignIn');
   }
-  
+
   return (
     <View style={styles.container}>
       <View style={styles.containerLogo}>
@@ -24,6 +24,7 @@ export default function WelCome() {
         <Text style={styles.title}>
           CoinWallet is official Bitcoin wallet where you can monitory prices of BTC
         </Text>
+
         <Text style={styles.subTitle}>Login to start</Text>
 
         <TouchableOpacity style={styles.button} onPress={onHandleNavigate}>

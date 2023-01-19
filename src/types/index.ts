@@ -16,7 +16,10 @@ export type CoinData = {
 export type Auth = {
     email: string;
     status: boolean;
-    logged: boolean;
+};
+
+export type TickerById = {
+    id: number;
 };
 
 export interface CoinsResponseType extends BaseResponseType {

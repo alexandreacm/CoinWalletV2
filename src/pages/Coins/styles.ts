@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components/native';
-import useFontFamily from '@hooks/useFontFamily';
 
 import spacings from '../../theme/spacings';
 
@@ -11,7 +10,7 @@ export const Container = styled.View`
 export const Title = styled.Text`
   font-size: 16px;
   text-align: center;
-  font-family: ${useFontFamily(400)};
+  font-family: 'montserrat';
 `;
 
 export const FlatList = styled.FlatList.attrs({
@@ -52,7 +51,7 @@ export const StyledEmptyListView = styled.View`
 export const StyledEmptyListText = styled.Text`
   font-size: 16px;
   color: #000;
-  font-family: ${useFontFamily(500)};
+  font-family: 'montserrat-bold';
 `;
 
 export const LeftSide = styled.View`
@@ -92,7 +91,7 @@ export const Name = styled.Text`
   width: 40%;
   font-size: 14px;
   text-align: left;
-  font-family: ${useFontFamily(500)};
+  font-family: 'montserrat-bold';
 `;
 
 export const Price = styled.Text`
@@ -100,7 +99,7 @@ export const Price = styled.Text`
   font-size: 14px;
   text-align: right;
   padding-right: 30px;
-  font-family: ${useFontFamily(500)};
+  font-family: 'montserrat-bold';
 `;
 
 export const Percent = styled.Text`
@@ -109,7 +108,7 @@ export const Percent = styled.Text`
   text-align: center;
   font-weight: bold;
   color: green;
-  font-family: ${useFontFamily(100)};
+  font-family: 'montserrat';
 `;
 
 export const PriceUsd = styled.Text`
@@ -118,7 +117,7 @@ export const PriceUsd = styled.Text`
   text-align: left;
   padding-right: 30px;
   color: #808080;
-  font-family: ${useFontFamily(500)};
+  font-family: 'montserrat-bold';
 `;
 
 export const RightSideViewHeader = styled.View`
@@ -140,5 +139,5 @@ export const PercentChange24h = styled.Text`
   font-size: 14px;
   text-align: left;
   color: green;
-  font-family: ${useFontFamily(400)};
+  font-family: 'montserrat';
 `;

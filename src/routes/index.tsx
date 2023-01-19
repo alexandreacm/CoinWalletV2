@@ -9,12 +9,20 @@ import { Auth } from 'src/types';
 
 export default function Routes() {
   const { getItem } = useAsyncStorage(saveUser);
-  const [user, setUser] = useState<Auth>({} as Auth);
+  const [user, setUser] = useState(null);
 
   useEffect(() => {
     async function loadData() {
-      const response = await getItem();
-      console.log('response: ', response);
+      // await AsyncStorage.removeItem(saveUser);
+      const userLocal = await getItem();
+
+      // console.log(userLocal);
+      // console.log(user);
+
+      if (userLocal !== null) {
+        const user = JSON.parse(userLocal);
+        setUser(user);
+      }
     }
 
     loadData();

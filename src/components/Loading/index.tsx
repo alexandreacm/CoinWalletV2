@@ -5,8 +5,15 @@ import { ActivityIndicator } from 'react-native';
 
 import { StyledBackground } from './styles';
 
-export default function Loading() {
+type Props = {
+  isLoading: boolean;
+}
+
+export default function Loading({ isLoading }: Props) {
   const { COLORS } = useTheme();
+
+  if (!isLoading) return;
+
   return (
     <StyledBackground>
       <ActivityIndicator size="large" color={COLORS.PRIMARY_COLOR} />

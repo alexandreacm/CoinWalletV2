@@ -15,12 +15,12 @@ import { Auth } from 'src/types';
 
 type Props = {
   signIn: (email: string, password: string) => void;
-  user: Auth;
+  SignOut: () => void;
 };
 
-export function SignIn({ signIn, user }: Props) {
+export function LoginIn({ signIn, SignOut }: Props) {
   const [email, setEmail] = useState<string>('alex@gmail.com');
-  const [password, setPassword] = useState<string>('');
+  const [password, setPassword] = useState<string>('123123');
 
   function handleOnLogin() {
     signIn(email, password);
@@ -32,9 +32,14 @@ export function SignIn({ signIn, user }: Props) {
         <Text style={styles.message}>Welcome</Text>
       </Animatable.View>
 
-      <Animatable.View style={styles.containerForm} animation="fadeInDown">
+      <Animatable.View style={styles.containerForm} animation="fadeInUp">
         <Text style={styles.title}>Email</Text>
-        <TextInput style={styles.input} placeholder="email" value={email} onChangeText={setEmail} />
+        <TextInput
+          style={styles.input}
+          placeholder="email"
+          value={email}
+          onChangeText={setEmail}
+        />
 
         <Text style={styles.title}>Password</Text>
         <TextInput
@@ -58,7 +63,7 @@ export function SignIn({ signIn, user }: Props) {
 }
 
 export default function (props: any) {
-  const { signIn, user } = useAuthContext();
+  const { SignIn, SignOut } = useAuthContext();
 
-  return <SignIn signIn={signIn} user={user} {...props} />;
+  return <LoginIn signIn={SignIn} SignOut={SignOut} {...props} />;
 }

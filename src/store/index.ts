@@ -1,9 +1,9 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-import { coinApi } from 'src/service/coinApi';
+import { tickerApi } from '../service/tickerApi';
 
 export const store = configureStore({
   reducer: {
-    [coinApi.reducerPath]: coinApi.reducer,
+    [tickerApi.reducerPath]: tickerApi.reducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(coinApi.middleware)
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(tickerApi.middleware)
 })

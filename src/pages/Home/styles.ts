@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components/native';
-import useFontFamily from '@hooks/useFontFamily';
 
 export const Container = styled.View`
   flex: 1;
@@ -20,5 +19,5 @@ export const Title = styled.Text`
   font-size: 35px;
   color: #fff;
   text-align: center;
-  font-family: ${useFontFamily(700)};
+  font-family: 'montserrat-bold'
 `;

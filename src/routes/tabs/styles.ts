@@ -1,13 +1,14 @@
 import styled, { css } from 'styled-components/native';
-import useFontFamily from '@hooks/useFontFamily';
 
 export const ContainerHeader = styled.View`
   width: 100%;
-  height: 330px;
-  background-color: ${({ theme }) => theme.COLORS.PRIMARY_COLOR};
+  height: 300px;
   justify-content: center;
   align-items: center;
   padding: 8px;
+  ${({ theme }) => css`
+      background-color:  ${theme.COLORS.PRIMARY_COLOR};
+  `}
 `;
 
 export const ContainerBody = styled.View`
@@ -24,14 +25,14 @@ export const AvailableBalance = styled.Text`
   font-size: 35px;
   color: #fff;
   text-align: center;
-  font-family: ${useFontFamily(700)};
+  font-family: 'montserrat-bold'
 `;
 
 export const AvailableBalanceTitle = styled.Text`
   font-size: 16px;
   color: #f3f3f3;
   text-align: center;
-  font-family: ${useFontFamily(400)};
+  font-family: 'montserrat'
 `;
 
 export const ContainerVerticalButtons = styled.View`
@@ -63,7 +64,7 @@ export const ButtonTitle = styled.Text`
   width: 100%;
   font-size: 14px;
   color: #f3f3f3;
-  font-family: ${useFontFamily(500)};
+  font-family: 'montserrat-bold';
   text-align: center;
   margin-top: 5px;
 `;

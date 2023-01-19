@@ -1,38 +1,59 @@
 import React, { createContext, useContext, useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { AuthProps } from 'src/pages/SignIn';
 import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 import { saveUser } from '../constants/storage';
 
-const AuthContext = createContext({});
+import { Auth } from 'src/types';
 
-export const useAuthContext = () => useContext(AuthContext);
+export const AuthContext = createContext({
+  user: {},
+  SignIn: () => { },
+  SignOut: () => { }
+});
+
+const USER: Auth = {
+  email: '',
+  status: false
+}
 
 function AuthProvider({ children }: any) {
-  const { setItem } = useAsyncStorage(saveUser);
+  const { setItem, getItem } = useAsyncStorage(saveUser);
+  const [user, setUser] = useState<Auth>(USER);
 
-  const [user, setUser] = useState<AuthProps>({} as AuthProps);
   const { navigate } = useNavigation();
 
-  async function signIn(email: string, password: string) {
+  async function SignIn(email: string, password: string) {
 
-    if (email === '' && password === '') return;
+    if (email === '' || password === '') return;
 
     if (email !== '' && password !== '') {
       setUser({
-        email,
-        status: true,
-        logged: true,
+        email: email,
+        status: true
       });
 
-      console.log(JSON.stringify(user));
-
       await setItem(JSON.stringify(user));
-      navigate('HomeLogged');
+      navigate('Home');
     }
   }
 
-  return <AuthContext.Provider value={{ signIn, user }}>{children}</AuthContext.Provider>;
+  async function SignOut() {
+    setUser(USER)
+  }
+
+  return (
+    <AuthContext.Provider value={{ user, SignIn, SignOut }}>
+      {children}
+    </AuthContext.Provider >
+  )
 }
 
 export default AuthProvider;
+
+
+export function useAuthContext() {
+  const { user, SignIn, SignOut } = useContext(AuthContext);
+
+  return { user, SignIn, SignOut };
+}
+

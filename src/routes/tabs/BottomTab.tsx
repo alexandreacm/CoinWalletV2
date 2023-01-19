@@ -6,13 +6,12 @@ import { useTheme } from 'styled-components/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Entypo, Ionicons, FontAwesome } from '@expo/vector-icons';
 
-const { Navigator, Screen } = createBottomTabNavigator();
-
-import { MaterialTopTab } from '../tabs/MaterialTopTab';
-
-import { History } from 'src/pages/History';
+import { History } from '../../pages/History';
 
 import { CustomTabButton } from '@components/CustomTabButton';
+import { MaterialTopTab } from './MaterialTopTab';
+
+const { Navigator, Screen } = createBottomTabNavigator();
 
 export function BottomTab() {
   const COLORS = useTheme();
@@ -29,9 +28,11 @@ export function BottomTab() {
       }}
     >
       <Screen
-        name="Home"
+        name="HomeTab"
         component={MaterialTopTab}
         options={{
+          title: 'Home',
+          headerShown: false,
           tabBarIcon: ({ focused, color }) => <Entypo name="home" size={25} color={color} />,
         }}
       />
