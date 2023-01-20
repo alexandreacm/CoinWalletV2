@@ -12,7 +12,7 @@ type Props = {
 export default function Loading({ isLoading }: Props) {
   const { COLORS } = useTheme();
 
-  if (!isLoading) return;
+  if (!isLoading) return null;
 
   return (
     <StyledBackground>

@@ -29,7 +29,7 @@ import { coinImage, formatMoney } from '@helpers/functions/utils/';
 import { CoinData } from 'src/types';
 import { useGetTickersQuery } from '../../service/tickerApi';
 
-import Lottie from 'lottie-react-native';
+import LottieView from 'lottie-react-native';
 import Loading from '@components/Loading';
 
 type Navigation = NativeStackHeaderProps;
@@ -43,7 +43,7 @@ export function Coins({ navigation }: Navigation) {
     return (
       <>
         <StyledEmptyList>
-          {/* <Lottie source={empty} loop autoPlay resizeMode="contain" /> */}
+          <LottieView source={empty} loop autoPlay resizeMode="contain" />
           <StyledEmptyListView>
             <StyledEmptyListText>There is no data!</StyledEmptyListText>
           </StyledEmptyListView>

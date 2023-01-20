@@ -51,7 +51,7 @@ export const StyledEmptyListView = styled.View`
 export const StyledEmptyListText = styled.Text`
   font-size: 16px;
   color: #000;
-  font-family: 'montserrat-bold';
+  font-family: 'montserrat';
 `;
 
 export const LeftSide = styled.View`
